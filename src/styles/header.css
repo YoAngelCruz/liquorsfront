@@ -1,0 +1,31 @@
+
+.header{
+    margin-top: 20px;
+    background-color: rgba(0, 0, 0, 0.792);
+    width: auto;
+    height: 100px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+section{
+    max-width: 1000px;
+    margin: auto;
+    padding: 30px 0;
+}
+.cinta{
+    text-align: center;
+}
+.link{
+    color: #d1d9da;
+    margin: 10px;
+    font-size: 30px;
+    background-color: rgb(175, 95, 55);
+    padding: 4px 15px ;
+    border-radius: 15px;
+}
+
+.link:hover{
+    background-color: #ffffff;
+  border: 1px solid #cd912b;
+  color: #ba6520;
+}
