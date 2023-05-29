@@ -11,7 +11,8 @@ query{
     description,
     edicion,
     fechaIngreso,
-    precio
+    precio,
+    url
   }
 }
 `

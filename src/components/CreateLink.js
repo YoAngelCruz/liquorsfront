@@ -12,8 +12,9 @@ const CREATE_LINK_MUTATION = gql`
     $tipoEnvase: String!,
     $edicion: String!,
     $precio: Float!,
+    $url: String!
     ){
-      createLiquor(destilado: $destilado,nombre: $nombre,description: $description,paisOrigen: $paisOrigen,size: $size,tipoEnvase: $tipoEnvase,edicion: $edicion,precio: $precio) {
+      createLiquor(destilado: $destilado,nombre: $nombre,description: $description,paisOrigen: $paisOrigen,size: $size,tipoEnvase: $tipoEnvase,edicion: $edicion,precio: $precio, url: $url) {
         id
         destilado
         nombre
@@ -23,6 +24,7 @@ const CREATE_LINK_MUTATION = gql`
         tipoEnvase
         edicion
         precio
+        url
      }
     }
 `;
@@ -38,6 +40,7 @@ const CreateLink = () => {
         tipoEnvase: '',
         edicion: '',
         precio: 0,
+        url: '', 
     });
 
     const [createLink] = useMutation(CREATE_LINK_MUTATION, {
@@ -50,6 +53,7 @@ const CreateLink = () => {
             tipoEnvase: formState.tipoEnvase,
             edicion: formState.edicion,
             precio: formState.precio,
+            url: formState.url
         },
         onCompleted: () => navigate('/')
     });
@@ -160,6 +164,18 @@ const CreateLink = () => {
             type="number"
             placeholder="Precio en el mercado"
           />
+          <input
+            className='mb2'
+            value={formState.url}
+            onChange={(e) =>
+              setFormState({
+                ...formState,
+                url: e.target.value
+              })
+            }
+            type='text'
+            placeholder="Url de la imagen"
+            />
         </div>
         <button type="submit">Submit</button>
       </form>

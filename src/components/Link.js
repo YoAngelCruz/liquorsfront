@@ -5,7 +5,7 @@ const Link = (props) => {
   return (
     <div>
       <div>
-        {link.destilado} ({link.nombre})
+        {link.destilado} ({link.nombre}, {link.url})
       </div>
     </div>
   );
